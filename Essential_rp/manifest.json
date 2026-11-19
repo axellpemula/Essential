@@ -1,23 +1,23 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Essential++ v2.0.1",
+        "name": "Essential++ v2.1.0",
         "description": "An all-in-one utility pack for Minecraft Bedrock Edition.",
         "uuid": "ca29b293-d1ec-4de7-8044-4f06f862f821",
-        "version": [1, 0, 1],
-        "min_engine_version": [1, 21, 90]
+        "version": [1, 1, 0],
+        "min_engine_version": [1, 26, 60]
     },
     "modules": [
         {
             "type": "resources",
             "uuid": "e6ae1328-e9a6-4c23-b495-2a3258f27285",
-            "version": [1, 0, 0]
+            "version": [1, 1, 0]
         }
     ],
     "dependencies": [
         {
             "uuid": "82b84b80-4bd5-48fe-81cb-be7840ed18db",
-            "version": [1, 0, 1]
+            "version": [1, 1, 0]
         }
     ]
 }

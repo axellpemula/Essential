@@ -9,6 +9,7 @@ import {
     PlayerBreakBlockAfterEvent,
 } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
+import { ACTION_FORM_TAG, MODAL_FORM_TAG } from "./uiTags.js";
 import { changelog } from "./changelog.js";
 
 let latestVersion = changelog[0]?.version;
@@ -258,7 +259,7 @@ class ModuleManager {
             world.setDynamicProperty("owner", player.id);
         }
         const form = new ActionFormData();
-        form.title("Essential++");
+        form.title(`${ACTION_FORM_TAG}Essential++`);
         form.body(`Select a module to configure.` + `\n§7Current TPS: §a${this.currentTps.toFixed(2)}` + `\n§7Modules: §a${moduleArray.length}`);
 
         for (const module of moduleArray) {
@@ -283,7 +284,7 @@ class ModuleManager {
         let owner = world.getDynamicProperty("owner");
         let hasPermission = player.id === owner || player.hasTag("essential++:config_access");
         const form = new ActionFormData();
-        form.title("Essential++ Add-On " + `§8[${latestVersion}]`);
+        form.title(`${ACTION_FORM_TAG}Essential++ Add-On §8[${latestVersion}]`);
         form.body("Welcome to the Essential++ configuration menu!\n" + `§7Current TPS: §a${this.currentTps.toFixed(2)}\n` + "§cNo access? /tag <yourname> add essential++:config_access");
 
         const actions = [];
@@ -292,6 +293,10 @@ class ModuleManager {
             actions.push("Modules");
             form.button("Settings", "textures/ui/settings_glyph_color_2x");
             actions.push("Settings");
+        }
+        if (this.modules.get("Navigation Waypoints")?.isEnabled) {
+            form.button("Track Destination", "textures/ui/home_icon.png");
+            actions.push("Track Destination");
         }
         form.button("Changelog", "textures/ui/blue_info_glyph");
         actions.push("Changelog");
@@ -313,6 +318,9 @@ class ModuleManager {
                     break;
                 case "Settings":
                     this.showSettingsMenu(player);
+                    break;
+                case "Track Destination":
+                    system.run(() => this.modules.get("Navigation Waypoints")?.showMenu(player));
                     break;
                 case "Changelog":
                     this.showChangelog(player);
@@ -336,7 +344,7 @@ class ModuleManager {
      */
     async showSettingsMenu(player) {
         const form = new ModalFormData();
-        form.title("Essential++ Settings");
+        form.title(`${MODAL_FORM_TAG}Essential++ Settings`);
 
         let giveMenu = world.getDynamicProperty("essential++:give_menu_on_join");
         if (giveMenu === undefined) giveMenu = true;
@@ -362,7 +370,7 @@ class ModuleManager {
         let players = Array.from(world.getAllPlayers()).filter((p) => p.id !== player.id);
         const form = new ModalFormData();
         if (players.length === 0) {
-            form.title("Grant Permission");
+            form.title(`${MODAL_FORM_TAG}Grant Permission`);
             form.label(`§cNo other players available to grant permission to.`);
             form.submitButton("Back");
             form.show(player).then((re) => {
@@ -371,7 +379,7 @@ class ModuleManager {
             });
             return;
         }
-        form.title("Grant Permission");
+        form.title(`${MODAL_FORM_TAG}Grant Permission`);
         form.label(`Allow other player to access Essential++ configuration menu`);
         form.dropdown(
             "Select a player to grant permission to:",
@@ -396,7 +404,7 @@ class ModuleManager {
         let players = Array.from(world.getAllPlayers()).filter((p) => p.hasTag("essential++:config_access"));
         const form = new ModalFormData();
         if (players.length === 0) {
-            form.title("Revoke Permission");
+            form.title(`${MODAL_FORM_TAG}Revoke Permission`);
             form.label(`§cNo other players available to revoke permission from.`);
             form.submitButton("Back");
             form.show(player).then((re) => {
@@ -405,7 +413,7 @@ class ModuleManager {
             });
             return;
         }
-        form.title("Revoke Permission");
+        form.title(`${MODAL_FORM_TAG}Revoke Permission`);
         form.label(`Revoke permission from a player`);
         form.dropdown(
             "Select a player to revoke permission from:",
@@ -429,7 +437,7 @@ class ModuleManager {
      */
     async showChangelog(player) {
         const form = new ActionFormData();
-        form.title("Changelog");
+        form.title(`${ACTION_FORM_TAG}Changelog`);
         const br = "§8═════════════════════§r";
         // Show every changelog
         const lines = [];
@@ -489,8 +497,8 @@ class ModuleManager {
      */
     async showCredits(player) {
         const form = new ActionFormData();
-        form.title("Credits");
-        const lines = ["§aEssential++ Add-On", "§7Developed by: §bxVoid_Axell, "§9Discord: §baxell_08", "§7Contributors: §fCommunity members", "§7Thanks for using Essential++!"];
+        form.title(`${ACTION_FORM_TAG}Credits`);
+        const lines = ["§aEssential++ Add-On", "§7Developed by: §bxVoid_Axell", "§9Discord: §baxell_08", "§7Contributors: §fCommunity members", "§7Thanks for using Essential++!"];
         const br = "§8═════════════════════§r";
         form.body([br, ...lines, br].join("\n"));
         form.button("Back");
@@ -506,9 +514,8 @@ class ModuleManager {
      */
     async showModuleConfigMenu(player, module) {
         const form = new ModalFormData();
-        form.title(`${module.name}`);
+        form.title(`${MODAL_FORM_TAG}${module.name}`);
         form.label(module.description);
-
         form.toggle("Enable Module", {
             defaultValue: module.isEnabled,
             tooltip: module.tooltip,
@@ -520,7 +527,11 @@ class ModuleManager {
             const currentValue = module[key];
             switch (setting.type) {
                 case "slider":
-                    form.slider(setting.label, setting.min, setting.max, { valueStep: setting.step, defaultValue: currentValue, tooltip: setting.tooltip });
+                    form.slider(setting.label, setting.min, setting.max, {
+                        valueStep: setting.step,
+                        defaultValue: currentValue,
+                        tooltip: setting.tooltip,
+                    });
                     break;
                 case "toggle":
                     form.toggle(setting.label, { defaultValue: currentValue, tooltip: setting.tooltip });
@@ -535,69 +546,59 @@ class ModuleManager {
         }
 
         const { canceled, formValues } = await form.show(player);
-
         if (!canceled) {
-            const cleaned = formValues.filter((v) => v !== null && v !== undefined);
+            const cleaned = formValues.filter((value) => value !== null && value !== undefined);
             const [enabledRaw, ...settingValues] = cleaned;
-            const isEnabled = enabledRaw === true;
             const wasEnabled = module.isEnabled;
             const isNowEnabled = enabledRaw === true;
-
             let settingsChanged = false;
+
             if (settingValues.length !== settingKeys.length) {
                 console.warn(`[Essential++] Warning: Settings value count mismatch for '${module.name}'. Expected ${settingKeys.length}, got ${settingValues.length}.`);
             }
             settingKeys.forEach((key, index) => {
-                const def = module.settings[key];
-                let val = settingValues[index];
-                if (def?.type === "slider") val = Number(val);
-                else if (def?.type === "toggle") val = val === true;
-                else if (def?.type === "textField") val = String(val ?? "");
-                else if (def?.type === "dropdown") val = Number(val);
+                const definition = module.settings[key];
+                let value = settingValues[index];
+                if (definition?.type === "slider") value = Number(value);
+                else if (definition?.type === "toggle") value = value === true;
+                else if (definition?.type === "textField") value = String(value ?? "");
+                else if (definition?.type === "dropdown") value = Number(value);
 
-                if (module[key] !== val) {
-                    module[key] = val;
+                if (module[key] !== value) {
+                    module[key] = value;
                     settingsChanged = true;
                 }
             });
 
             module.isEnabled = isNowEnabled;
-
-            // Now call hooks based on state changes
             if (!wasEnabled && isNowEnabled) {
-                // Was OFF, is now ON -> Load
                 try {
                     module.onLoad();
-                } catch (e) {
-                    console.error(`[Essential++] Error during onLoad for module '${module.name}': ${e}`);
+                } catch (error) {
+                    console.error(`[Essential++] Error during onLoad for module '${module.name}': ${error}`);
                 }
                 CTsAPI.msg.sendActionMessage(player, `§7Module §b${module.name} §7is now §aenabled§7.`, true);
             } else if (wasEnabled && !isNowEnabled) {
-                // Was ON, is now OFF -> Unload
                 try {
                     module.onUnload();
-                } catch (e) {
-                    console.error(`[Essential++] Error during onUnload for module '${module.name}': ${e}`);
+                } catch (error) {
+                    console.error(`[Essential++] Error during onUnload for module '${module.name}': ${error}`);
                 }
                 CTsAPI.msg.sendActionMessage(player, `§7Module §b${module.name} §7is now §cdisabled§7.`, false);
             } else if (isNowEnabled && settingsChanged) {
-                // Was ON, is still ON, but settings changed -> Reload
                 try {
                     module.onUnload();
                     module.onLoad();
-                } catch (e) {
-                    console.error(`[Essential++] Error during settings-change reload for module '${module.name}': ${e}`);
+                } catch (error) {
+                    console.error(`[Essential++] Error during settings-change reload for module '${module.name}': ${error}`);
                 }
                 CTsAPI.msg.sendSuccessMessage(player, `§7Settings reloaded for §b${module.name}§7.`);
             } else if (settingsChanged) {
-                // Was OFF, is still OFF, but settings changed -> Just notify
                 CTsAPI.msg.sendSuccessMessage(player, `§7Settings saved for §b${module.name}§7.`);
             }
-
             this.saveSettings();
         }
 
-        // Always return to the main menu to create a seamless navigation flow.
         system.run(() => this.showMainMenuCommand(player));
     }
 }
