@@ -4,6 +4,26 @@
 // - { type: 'add'|'remove'|'fix'|'change', title: string, sub?: string[] }
 export const changelog = [
     {
+        version: "v2.1.0",
+        items: [
+            {
+                type: "add",
+                title: "Navigation Waypoints",
+                sub: ["Track homes, accessible warps, public/owned waystones, and your active gravestones on the native locator bar using /es:waypoint or the Essential++ menu."],
+            },
+            {
+                type: "change",
+                title: "Configuration UI",
+                sub: ["Configuration and navigation forms now use Essential++ Resource Pack layouts and artwork; requires Minecraft 1.26.60 or newer."],
+            },
+            {
+                type: "change",
+                title: "Script API",
+                sub: ["Updated @minecraft/server to 2.11.0 and @minecraft/server-ui to 2.3.0."],
+            },
+        ],
+    },
+    {
         version: "v2.0.1",
         items: [
             {
