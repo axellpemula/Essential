@@ -11,9 +11,8 @@ import {
     CommandPermissionLevel,
     PlayerBreakBlockBeforeEvent,
 } from "@minecraft/server";
-import { ActionFormData } from "@minecraft/server-ui";
+import { MessageFormData, ActionFormData } from "@minecraft/server-ui";
 import { Module, moduleManager } from "../mainCore.js";
-import { ACTION_FORM_TAG } from "../uiTags.js";
 
 class GravestoneModule extends Module {
     constructor() {
@@ -122,11 +121,11 @@ class GravestoneModule extends Module {
         event.cancel = true;
         if (player.getGameMode() != "Creative") return recoverGraveItems(player, block, player.dimension.id, event);
         system.run(() => {
-            let form = new ActionFormData();
-            form.title(`${ACTION_FORM_TAG}Break Gravestone?`);
+            let form = new MessageFormData();
+            form.button2("Yes, break it");
+            form.button1("No, keep it");
+            form.title("Break Gravestone?");
             form.body("Breaking the gravestone will permanently delete it and its contents. Are you sure you want to do this?");
-            form.button("No, keep it");
-            form.button("Yes, break it");
             form.show(player).then((response) => {
                 if (response.selection === 1) {
                     const gravestoneModule = moduleManager.modules.get("Gravestone");
@@ -500,7 +499,7 @@ class GravestoneModule extends Module {
         }
 
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}My Gravestones`);
+        form.title("My Gravestones");
         form.body("Select a gravestone to view details or recover items.");
 
         myGraves.forEach(([key, grave]) => {
@@ -520,7 +519,7 @@ class GravestoneModule extends Module {
     async showGraveDetailsMenu(player, key, grave) {
         const [x, y, z, dimId] = key.split(",");
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}Gravestone Details`);
+        form.title("Gravestone Details");
 
         const timeRemaining = Math.max(0, grave.despawnTimestamp - Date.now());
         const timeStr = CTsAPI.utils.formatTimeFull(timeRemaining / 1000);

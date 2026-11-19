@@ -1,7 +1,6 @@
 import { CommandPermissionLevel, Player, PlayerPermissionLevel, system, world } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { Module, moduleManager } from "../mainCore.js";
-import { ACTION_FORM_TAG, MODAL_FORM_TAG } from "../uiTags.js";
 
 class Warp extends Module {
     constructor() {
@@ -85,7 +84,7 @@ class Warp extends Module {
             return;
         }
 
-        const confirmForm = new ModalFormData().title(`${MODAL_FORM_TAG}Confirm Deletion`).label(`Are you sure you want to delete the warp "${warpName}"? This cannot be undone.`);
+        const confirmForm = new ModalFormData().title("Confirm Deletion").label(`Are you sure you want to delete the warp "${warpName}"? This cannot be undone.`);
         confirmForm.toggle("Confirm Delete");
         const { formValues, canceled } = await confirmForm.show(player);
 
@@ -127,7 +126,7 @@ class Warp extends Module {
             return;
         }
 
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}Teleport to a Warp`).body("Select a destination.");
+        const form = new ActionFormData().title("Teleport to a Warp").body("Select a destination.");
         const warpMap = [];
 
         globalWarps.sort().forEach((name) => {
@@ -153,7 +152,7 @@ class Warp extends Module {
 
     async showCreateWarpMenu(player) {
         const form = new ModalFormData()
-            .title(`${MODAL_FORM_TAG}Create Warp`)
+            .title("Create Warp")
             .textField("Warp Name", "Enter a unique name for the new warp")
             .toggle("Make this warp public?", { defaultValue: true });
         if (hasAdminPermission(player, this.isOpRequired)) {
@@ -179,7 +178,7 @@ class Warp extends Module {
             return;
         }
 
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}${isAdmin ? "Admin: Delete Warp" : "Delete My Warp"}`).body("Select a warp to delete.");
+        const form = new ActionFormData().title(isAdmin ? "Admin: Delete Warp" : "Delete My Warp").body("Select a warp to delete.");
         targetWarps.sort().forEach((name) => form.button(name, "textures/ui/cancel"));
         const { selection, canceled } = await form.show(player);
 
@@ -198,7 +197,7 @@ class Warp extends Module {
             return;
         }
 
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}${isAdmin ? "Admin: Edit Warp" : "Edit My Warp"}`).body("Select a warp to edit.");
+        const form = new ActionFormData().title(isAdmin ? "Admin: Edit Warp" : "Edit My Warp").body("Select a warp to edit.");
         targetWarps.sort().forEach((name) => form.button(name, "textures/ui/pencil_edit_icon"));
         const { selection, canceled } = await form.show(player);
         if (canceled || selection === undefined) return;
@@ -219,7 +218,7 @@ class Warp extends Module {
             return;
         }
 
-        const form = new ModalFormData().title(`${MODAL_FORM_TAG}Editing: ${warpName}`).toggle("Public", { defaultValue: warp.isPublic });
+        const form = new ModalFormData().title(`Editing: ${warpName}`).toggle("Public", { defaultValue: warp.isPublic });
         if (hasAdminPermission(player, this.isOpRequired)) form.toggle("Global (Admin)", { defaultValue: warp.isGlobal });
 
         const { formValues, canceled } = await form.show(player);
@@ -237,7 +236,7 @@ class Warp extends Module {
     }
 
     async showMyWarpsMenu(player) {
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}Manage My Warps`).body("Manage your personal and public warps.");
+        const form = new ActionFormData().title("Manage My Warps").body("Manage your personal and public warps.");
         form.button("Create a New Warp", "textures/ui/icon_recipe_item");
         form.button("Edit a Warp", "textures/ui/pencil_edit_icon");
         form.button("Delete a Warp", "textures/ui/trash");
@@ -259,7 +258,7 @@ class Warp extends Module {
     }
 
     async showAdminMenu(player) {
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}Admin: Warp Management`).body("Manage all server warps.");
+        const form = new ActionFormData().title("Admin: Warp Management").body("Manage all server warps.");
         form.button("Edit a Warp", "textures/ui/pencil_edit_icon");
         form.button("Delete a Warp", "textures/ui/trash");
         form.button("Set a Warp's Location", "textures/blocks/command_block");
@@ -288,7 +287,7 @@ class Warp extends Module {
             return;
         }
 
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}Admin: Set Warp Location`).body("Select a warp to update to your current location.");
+        const form = new ActionFormData().title("Admin: Set Warp Location").body("Select a warp to update to your current location.");
         warpNames.sort().forEach((name) => form.button(name));
 
         const { selection, canceled } = await form.show(player);
@@ -307,7 +306,7 @@ class Warp extends Module {
      * @returns
      */
     async showMainMenu(player) {
-        const form = new ActionFormData().title(`${ACTION_FORM_TAG}Warp System`).body("What would you like to do?");
+        const form = new ActionFormData().title("Warp System").body("What would you like to do?");
         form.button("Teleport to a Warp", "textures/ui/portalBg");
         form.button("Manage My Warps", "textures/items/book_writable");
         if (hasAdminPermission(player, this.isOpRequired)) {

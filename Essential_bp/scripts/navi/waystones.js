@@ -1,7 +1,6 @@
 import { Block, BlockPermutation, Direction, ItemStack, Player, PlayerBreakBlockBeforeEvent, system, world } from "@minecraft/server";
 import { Module, moduleManager } from "../mainCore";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
-import { ACTION_FORM_TAG, MODAL_FORM_TAG } from "../uiTags.js";
 
 let waystoneModule;
 
@@ -293,7 +292,7 @@ function createWaystone(waystone, player) {
     const iconKeys = Object.keys(iconData);
     const defaultIconIndex = currentData.icon ? Math.max(0, iconKeys.indexOf(currentData.icon)) : iconKeys.indexOf(player.dimension.id?.replace("minecraft:", ""));
     const form = new ModalFormData();
-    form.title(`${MODAL_FORM_TAG}Waystone`);
+    form.title("Waystone");
     form.textField("Name", "Waystone Name", { defaultValue: defaultName });
     if (hasLogOptions) {
         form.dropdown("Appearance", types.log, { defaultValueIndex: types.logIndex });
@@ -363,7 +362,7 @@ function createWaystone(waystone, player) {
 
 function openWaystoneUI(player, waystone, item = null) {
     let form = new ActionFormData();
-    form.title(`${ACTION_FORM_TAG}Waystone Teleportation`);
+    form.title("Waystone Teleportation");
     let data;
     if (!item) {
         data = waystone.getData();

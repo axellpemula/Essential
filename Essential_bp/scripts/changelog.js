@@ -8,13 +8,13 @@ export const changelog = [
         items: [
             {
                 type: "add",
-                title: "Navigation Waypoints",
-                sub: ["Track homes, accessible warps, public/owned waystones, and your active gravestones on the native locator bar using /es:waypoint or the Essential++ menu."],
+                title: "Teleport Requests",
+                sub: ["Use /es:tpa, /es:tpaccept, /es:tpdeny, or /es:tpacancel to request player-to-player teleports. Requests expire and sending has a configurable cooldown."],
             },
             {
                 type: "change",
-                title: "Configuration UI",
-                sub: ["Configuration and navigation forms now use Essential++ Resource Pack layouts and artwork; requires Minecraft 1.26.60 or newer."],
+                title: "Navigation Waypoints",
+                sub: ["Track up to five destinations at once on the native locator bar. Destinations are color-coded; /es:waypoint opens the selector."],
             },
             {
                 type: "change",
