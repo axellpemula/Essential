@@ -1,0 +1,42 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "es:beam",
+            "materials": {
+                "default": "entity_glow"
+            },
+            "textures": {
+                "default": "textures/entity/empty",
+                "outline": "textures/ui/White",
+                "outline_lime": "textures/blocks/outline/lime",
+                "outline_orange": "textures/blocks/outline/orange",
+                "outline_light_gray": "textures/blocks/outline/light_gray",
+                "outline_yellow": "textures/blocks/outline/yellow",
+                "outline_aqua": "textures/blocks/outline/aqua",
+                "outline_blue": "textures/blocks/outline/blue",
+                "outline_red": "textures/blocks/outline/red",
+                "outline_black": "textures/ui/Black",
+                "outline_brown": "textures/blocks/outline/brown",
+                "outline_test": "textures/blocks/outline/test"
+            },
+            "geometry": {
+                "default": "geometry.empty",
+                "beam": "geometry.beam"
+            },
+            "scripts": {
+                "should_update_bones_and_effects_offscreen": true,
+                "should_update_effects_offscreen": true,
+                "animate": ["ysize"]
+            },
+            "animations": {
+                "ysize": "animation.beam"
+            },
+            "render_controllers": ["controller.render.beam"],
+            "spawn_egg": {
+                "base_color": "#02ffa2",
+                "overlay_color": "#fc0000"
+            }
+        }
+    }
+}

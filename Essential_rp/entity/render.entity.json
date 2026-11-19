@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "es:render",
+            "materials": {
+                "default": "outline"
+            },
+            "textures": {
+                "default": "textures/blocks/outline/white"
+            },
+            "geometry": {
+                "default": "geometry.outline"
+            },
+            "scripts": {
+                "should_update_bones_and_effects_offscreen": true,
+                "should_update_effects_offscreen": true
+            },
+            "render_controllers": ["controller.render.test"],
+            "spawn_egg": {
+                "base_color": "#02ffa2",
+                "overlay_color": "#fc0000"
+            }
+        }
+    }
+}

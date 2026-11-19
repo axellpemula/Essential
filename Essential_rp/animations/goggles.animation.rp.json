@@ -1,0 +1,16 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.goggles.head": {
+            "loop": true,
+            "animation_length": 3.5,
+            "override_previous_animation": true,
+            "bones": {
+                "goggles": {
+                    "position": [1.25, 0, -1],
+                    "scale": 0.75
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:aiot_netherite_upgrade_smithing_template"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["nnn", "nsd", "ddd"],
+        "key": {
+            "n": {
+                "item": "minecraft:netherite_ingot"
+            },
+            "s": {
+                "item": "minecraft:netherite_upgrade_smithing_template"
+            },
+            "d": {
+                "item": "minecraft:diamond"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:aiot_netherite_upgrade_smithing_template",
+            "count": 1
+        }
+    }
+}

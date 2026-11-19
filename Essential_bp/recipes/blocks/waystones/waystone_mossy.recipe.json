@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:waystone_mossy_recipe"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [" m ", "mwm", "mmm"],
+        "key": {
+            "m": {
+                "item": "minecraft:mossy_stone_bricks"
+            },
+            "w": {
+                "item": "es:warpstone"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:waystone_mossy",
+            "count": 1
+        }
+    }
+}

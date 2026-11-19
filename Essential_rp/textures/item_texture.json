@@ -1,0 +1,81 @@
+{
+    "resource_pack_name": "Essential++ Item Textures",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "fake_blocks_goggles": {
+            "textures": "textures/items/fake_blocks_goggles"
+        },
+        "excavator_hat": {
+            "textures": "textures/items/excavator_hat"
+        },
+        "menu": {
+            "textures": "textures/items/menu"
+        },
+        "flashlight_on": {
+            "textures": "textures/items/flashlight_on"
+        },
+        "flashlight": {
+            "textures": "textures/items/flashlight"
+        },
+        "netherite_helmet_with_light": {
+            "textures": "textures/items/netheriteHelmetWithLight"
+        },
+        "diamond_helmet_with_light": {
+            "textures": "textures/items/diamondHelmetWithLight"
+        },
+        "gold_helmet_with_light": {
+            "textures": "textures/items/goldHelmetWithLight"
+        },
+        "iron_helmet_with_light": {
+            "textures": "textures/items/ironHelmetWithLight"
+        },
+        "chain_helmet_with_light": {
+            "textures": "textures/items/chainHelmetWithLight"
+        },
+        "copper_helmet_with_light": {
+            "textures": "textures/items/copperHelmetWithLight"
+        },
+        "leather_helmet_with_light": {
+            "textures": "textures/items/leatherHelmetWithLight.tga"
+        },
+        "notleather_helmet_with_light": {
+            "textures": "textures/items/notLeatherHelmetWithLight"
+        },
+        "warpstone": {
+            "textures": "textures/items/warpstone"
+        },
+        "bound_scroll": {
+            "textures": "textures/items/bound_scroll"
+        },
+        "unbound_scroll": {
+            "textures": "textures/items/unbound_scroll"
+        },
+        "wooden_aiot": {
+            "textures": "textures/items/AIOTs/wooden_aiots"
+        },
+        "stone_aiot": {
+            "textures": "textures/items/AIOTs/stone_aiots"
+        },
+        "iron_aiot": {
+            "textures": "textures/items/AIOTs/iron_aiots"
+        },
+        "copper_aiot": {
+            "textures": "textures/items/AIOTs/copper_aiots"
+        },
+        "golden_aiot": {
+            "textures": "textures/items/AIOTs/golden_aiots"
+        },
+        "diamond_aiot": {
+            "textures": "textures/items/AIOTs/diamond_aiots"
+        },
+        "netherite_aiot": {
+            "textures": "textures/items/AIOTs/netherite_aiots"
+        },
+        "aiot_netherite_upgrade_smithing_template": {
+            "textures": "textures/items/AIOTs/aiot_netherite_upgrade_smithing_template"
+        },
+        "sorter": {
+            "textures": "textures/items/sorter"
+        }
+    }
+}

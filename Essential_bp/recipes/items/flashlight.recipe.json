@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:flashlight"
+        },
+        "tags": ["crafting_table", "fake_blocks"],
+        "pattern": ["cb ", "lcc", "c  "],
+        "key": {
+            "c": {
+                "item": "minecraft:cobbled_deepslate"
+            },
+            "b": {
+                "item": "minecraft:wooden_button"
+            },
+            "l": {
+                "item": "minecraft:lantern"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:flashlight",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:excavator_hat"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["s", "g"],
+        "key": {
+            "g": {
+                "item": "minecraft:golden_helmet"
+            },
+            "s": {
+                "item": "minecraft:sea_lantern"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:excavator_hat",
+            "count": 1
+        }
+    }
+}

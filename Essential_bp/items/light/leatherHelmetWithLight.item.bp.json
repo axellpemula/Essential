@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "es:leather_helmet_with_light",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": {
+                "textures": {
+                    "default": "notleather_helmet_with_light",
+                    "dyed": "leather_helmet_with_light"
+                }
+            },
+            "minecraft:display_name": {
+                "value": "Leather Helmet with Light"
+            },
+            "minecraft:wearable": {
+                "slot": "slot.armor.head",
+                "protection": 1
+            },
+            "minecraft:tags": {
+                "tags": ["minecraft:is_armor", "es:light", "minecraft:trimmable_armors"]
+            },
+            "minecraft:enchantable": {
+                "slot": "armor_head",
+                "value": 1
+            },
+            "minecraft:dyeable": {},
+            "minecraft:durability": {
+                "max_durability": 55
+            },
+            "minecraft:max_stack_size": 1
+        }
+    }
+}

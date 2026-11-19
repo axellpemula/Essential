@@ -1,0 +1,136 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.box": {
+            "geometry": "geometry.box",
+            "ignore_lighting": true,
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "texture.outline",
+                        "texture.outline_lime",
+                        "texture.outline_orange",
+                        "texture.outline_light_gray",
+                        "texture.outline_yellow",
+                        "texture.outline_aqua",
+                        "texture.outline_blue",
+                        "texture.outline_red",
+                        "texture.outline_black",
+                        "texture.outline_brown",
+                        "texture.outline_test"
+                    ]
+                },
+                "materials": {
+                    "Array.materials": ["material.outline"]
+                }
+            },
+            "materials": [{ "*": "Array.materials[0]" }],
+            "textures": ["Array.textures[q.property('es:color_index')]"]
+        },
+        "controller.render.outline": {
+            "geometry": "geometry.outline",
+            "ignore_lighting": true,
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "texture.outline",
+                        "texture.outline_lime",
+                        "texture.outline_orange",
+                        "texture.outline_light_gray",
+                        "texture.outline_yellow",
+                        "texture.outline_aqua",
+                        "texture.outline_blue",
+                        "texture.outline_red",
+                        "texture.outline_black",
+                        "texture.outline_brown",
+                        "texture.outline_test"
+                    ]
+                },
+                "materials": {
+                    "Array.materials": ["material.outline"]
+                }
+            },
+            "materials": [{ "*": "Array.materials[0]" }],
+            "textures": ["Array.textures[q.property('es:color_index')]"]
+        },
+        "controller.render.ore": {
+            "geometry": "geometry.box",
+            "ignore_lighting": true,
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "texture.ancient_debris",
+                        "texture.coal_ore",
+                        "texture.deepslate_coal_ore",
+                        "texture.iron_ore",
+                        "texture.deepslate_iron_ore",
+                        "texture.gold_ore",
+                        "texture.deepslate_gold_ore",
+                        "texture.diamond_ore",
+                        "texture.deepslate_diamond_ore",
+                        "texture.emerald_ore",
+                        "texture.deepslate_emerald_ore",
+                        "texture.lapis_ore",
+                        "texture.deepslate_lapis_ore",
+                        "texture.redstone_ore",
+                        "texture.deepslate_redstone_ore",
+                        "texture.nether_quartz_ore",
+                        "texture.copper_ore",
+                        "texture.deepslate_copper_ore",
+                        "texture.nether_gold_ore"
+                    ]
+                },
+                "materials": {
+                    "Array.materials": ["material.entity_seethrough"]
+                }
+            },
+            "materials": [{ "*": "Array.materials[0]" }],
+            "textures": ["Array.textures[q.property('es:ore_index')]"]
+        },
+        "controller.render.beam": {
+            "geometry": "geometry.beam",
+            "ignore_lighting": true,
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "texture.outline",
+                        "texture.outline_lime",
+                        "texture.outline_orange",
+                        "texture.outline_light_gray",
+                        "texture.outline_yellow",
+                        "texture.outline_aqua",
+                        "texture.outline_blue",
+                        "texture.outline_red",
+                        "texture.outline_black",
+                        "texture.outline_brown",
+                        "texture.outline_test"
+                    ]
+                },
+                "materials": {
+                    "Array.materials": ["material.default"]
+                }
+            },
+            "materials": [{ "*": "Array.materials[0]" }],
+            "textures": ["Array.textures[q.property('es:color_index')]"],
+            "part_visibility": [
+                {
+                    "body": "q.property('es:show')"
+                },
+                {
+                    "*": "q.property('es:show')"
+                }
+            ]
+        },
+        "controller.render.test": {
+            "geometry": "geometry.default",
+            "ignore_lighting": true,
+            "materials": [{ "*": "Material.default" }],
+            "textures": ["Texture.default"],
+            "part_visibility": [
+                {
+                    "*": "q.property('es:show')"
+                }
+            ]
+        }
+    }
+}

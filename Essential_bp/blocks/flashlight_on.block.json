@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "es:flashlight_on",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "minecraft:geometry": {
+                "identifier": "geometry.flashlight",
+                "bone_visibility": {
+                    "on": true
+                }
+            },
+            "tag:es:light": {},
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "flashlight",
+                    "render_method": "blend"
+                }
+            },
+            "minecraft:display_name": "Flashlight (ON)",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["all"],
+                        "block_filter": ["minecraft:air"]
+                    }
+                ]
+            }
+        }
+    }
+}

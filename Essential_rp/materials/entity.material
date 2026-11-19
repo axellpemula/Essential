@@ -1,0 +1,43 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "outline:entity_static": {
+      "+states": [ "InvertCulling", "EnableStencilTest", "DisableDepthWrite", "Blending" ],
+      "+defines": [ "USE_OVERLAY" ],
+      "-defines": [ "FANCY" ],
+      "depthFunc": "Always",
+      // ^ Uncomment if you want the outline to be
+      //   rendered behind the block.
+      "frontFace": {
+        "stencilFunc": "NotEqual"
+      },
+      "backFace": {
+        "stencilFunc": "Equal"
+      },
+      "stencilRef": 2,
+      "stencilReadMark": 2
+    },
+    "entity_seethrough:entity_emissive_alpha_one_sided": {
+      "+states": [
+        "DisableDepthTest",
+        "Blending",
+        "DisableDepthWrite",
+        "DisableAlphaWrite"
+      ],
+      "defines": [
+        "ENABLE_FOG",
+        "ENABLE_LIGHT"
+      ]
+    },
+    "entity_glow:entity_emissive_alpha_one_sided": {
+      "+states": [
+        "Blending",
+        "DisableAlphaWrite"
+      ],
+      "defines": [
+        "ENABLE_FOG",
+        "ENABLE_LIGHT"
+      ]
+    }
+  }
+}

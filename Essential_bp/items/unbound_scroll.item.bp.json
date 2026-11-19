@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "es:unbound_scroll",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:icon": "unbound_scroll",
+            "minecraft:display_name": {
+                "value": "Unbound Scroll§r\n§7Used to bind on waystones"
+            },
+            "minecraft:max_stack_size": 64
+        }
+    }
+}

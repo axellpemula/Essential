@@ -1,0 +1,300 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "es:waystone_purpur",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"],
+                    "y_rotation_offset": 180
+                }
+            },
+            "states": {
+                "es:half": ["bottom", "top"],
+                "es:rune_color": [
+                    "white",
+                    "black",
+                    "blue",
+                    "brown",
+                    "cyan",
+                    "gray",
+                    "green",
+                    "light_blue",
+                    "light_gray",
+                    "lime",
+                    "magenta",
+                    "orange",
+                    "pink",
+                    "purple",
+                    "red",
+                    "yellow"
+                ]
+            }
+        },
+        "components": {
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "tag:minecraft:stone_tier_destructible": {},
+            "tag:minecraft:diamond_tier_destructible": {},
+            "tag:minecraft:golden_tier_destructible": {},
+            "tag:minecraft:iron_tier_destructible": {},
+            "tag:minecraft:wooden_tier_destructible": {},
+            "tag:minecraft:netherite_tier_destructible": {},
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:movable": {
+                "movement_type": "immovable",
+                "sticky": "none"
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.waystone"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "render_method": "opaque",
+                    "texture": "purpur_pillar_side"
+                }
+            },
+            "tag:es:waystone": {},
+            "minecraft:collision_box": true,
+            "es:waystone": {},
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:display_name": "Waystone purpur",
+            "minecraft:loot": "loot_tables/air.loot.json"
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.waystone_top"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_white"
+                        }
+                    },
+                    "tag:half_top": {},
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "allowed_faces": ["up"],
+                                "block_filter": [
+                                    {
+                                        "tags": "q.any_tag('es:waystone')"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "minecraft:collision_box": {
+                        "origin": [-8, 0, -8],
+                        "size": [16, 14, 16]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [-8, 0, -8],
+                        "size": [16, 14, 16]
+                    },
+                    "minecraft:loot": "loot_tables/air.loot.json"
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'black' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_black"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'blue' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_blue"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'brown' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_brown"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'cyan' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_cyan"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'gray' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_gray"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'green' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_green"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'light_blue' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_light_blue"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'light_gray' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_light_gray"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'lime' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_lime"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'magenta' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_magenta"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'orange' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_orange"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'pink' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_pink"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'purple' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_purple"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'red' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_red"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:rune_color') == 'yellow' && q.block_state('es:half') == 'top'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "waystone_runes_yellow"
+                        }
+                    }
+                }
+            },
+            // Facing north
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, 0] }
+                }
+            },
+            // Facing west
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 90, 0] }
+                }
+            },
+            // Facing south
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 180, 0] }
+                }
+            },
+            // Facing east
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, -90, 0] }
+                }
+            }
+        ]
+    }
+}

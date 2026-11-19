@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:diamond_helmet_with_light"
+        },
+        "tags": ["crafting_table", "fake_blocks"],
+        "pattern": ["s", "g"],
+        "key": {
+            "g": {
+                "item": "minecraft:diamond_helmet"
+            },
+            "s": {
+                "item": "es:flashlight"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:diamond_helmet_with_light",
+            "count": 1
+        }
+    }
+}

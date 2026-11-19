@@ -1,0 +1,47 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "es:gravestone_entity",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "spawn_category": "misc"
+        },
+        "components": {
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:inventory": {
+                "container_type": "container",
+                "inventory_size": 54,
+                "private": true
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 1,
+                "min": 1
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "height": 0,
+                "width": 0
+            },
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": false,
+                "always_show": true
+            }
+        }
+    }
+}

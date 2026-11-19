@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_smithing_transform": {
+        "description": {
+            "identifier": "es:netherite_aiot"
+        },
+        "tags": ["smithing_table"],
+        "base": {
+            "item": "es:diamond_aiot"
+        },
+        "template": {
+            "item": "es:aiot_netherite_upgrade_smithing_template"
+        },
+        "addition": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "result": {
+            "item": "es:netherite_aiot"
+        }
+    }
+}

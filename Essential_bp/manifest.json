@@ -1,0 +1,42 @@
+{
+    "format_version": 2,
+    "metadata": {
+        "authors": ["xVoid Axell"],
+        "product_type": "addon"
+    },
+    "header": {
+        "name": "Essential++ v2.0.1",
+        "description": "An all-in-one utility pack for Minecraft Bedrock Edition.",
+        "min_engine_version": [1, 21, 90],
+        "uuid": "82b84b80-4bd5-48fe-81cb-be7840ed18db",
+        "version": [1, 0, 1]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "15a99685-9d25-41fa-82bf-ca571471586f",
+            "version": [1, 0, 0]
+        },
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "ece7b720-a8dd-4561-8bd0-b41f71f53403",
+            "entry": "scripts/main.js",
+            "version": [1, 0, 0]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "ca29b293-d1ec-4de7-8044-4f06f862f821",
+            "version": [1, 0, 1]
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.0.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0"
+        }
+    ]
+}

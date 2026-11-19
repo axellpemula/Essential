@@ -1,0 +1,68 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_name": "atlas.terrain",
+    "padding": 8,
+    "num_mip_levels": 4,
+    "texture_data": {
+        "gravestone_steve": {
+            "textures": "textures/blocks/gravestone/gravestone_steve"
+        },
+        "gravestone_ct": {
+            "textures": "textures/blocks/gravestone/gravestone_ct"
+        },
+        "gravestone_patr": {
+            "textures": "textures/blocks/gravestone/gravestone_patr"
+        },
+        "flashlight": {
+            "textures": "textures/items/models/flashlight"
+        },
+        "waystone_runes_white": {
+            "textures": "textures/blocks/waystones/waystone_runes_white"
+        },
+        "waystone_runes_black": {
+            "textures": "textures/blocks/waystones/waystone_runes_black"
+        },
+        "waystone_runes_blue": {
+            "textures": "textures/blocks/waystones/waystone_runes_blue"
+        },
+        "waystone_runes_brown": {
+            "textures": "textures/blocks/waystones/waystone_runes_brown"
+        },
+        "waystone_runes_cyan": {
+            "textures": "textures/blocks/waystones/waystone_runes_cyan"
+        },
+        "waystone_runes_gray": {
+            "textures": "textures/blocks/waystones/waystone_runes_gray"
+        },
+        "waystone_runes_green": {
+            "textures": "textures/blocks/waystones/waystone_runes_green"
+        },
+        "waystone_runes_light_blue": {
+            "textures": "textures/blocks/waystones/waystone_runes_light_blue"
+        },
+        "waystone_runes_light_gray": {
+            "textures": "textures/blocks/waystones/waystone_runes_light_gray"
+        },
+        "waystone_runes_lime": {
+            "textures": "textures/blocks/waystones/waystone_runes_lime"
+        },
+        "waystone_runes_magenta": {
+            "textures": "textures/blocks/waystones/waystone_runes_magenta"
+        },
+        "waystone_runes_orange": {
+            "textures": "textures/blocks/waystones/waystone_runes_orange"
+        },
+        "waystone_runes_pink": {
+            "textures": "textures/blocks/waystones/waystone_runes_pink"
+        },
+        "waystone_runes_purple": {
+            "textures": "textures/blocks/waystones/waystone_runes_purple"
+        },
+        "waystone_runes_red": {
+            "textures": "textures/blocks/waystones/waystone_runes_red"
+        },
+        "waystone_runes_yellow": {
+            "textures": "textures/blocks/waystones/waystone_runes_yellow"
+        }
+    }
+}

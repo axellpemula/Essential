@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:unbound_scroll_recipe"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["s s", "ppp", "s s"],
+        "key": {
+            "s": {
+                "item": "minecraft:string"
+            },
+            "p": {
+                "item": "minecraft:paper"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:unbound_scroll",
+            "count": 3
+        }
+    }
+}

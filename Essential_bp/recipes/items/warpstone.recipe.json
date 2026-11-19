@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:warpstone_recipe"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["ded", "ege", "ded"],
+        "key": {
+            "d": {
+                "item": "minecraft:diamond"
+            },
+            "e": {
+                "item": "minecraft:ender_pearl"
+            },
+            "g": {
+                "item": "minecraft:stone"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:warpstone",
+            "count": 1
+        }
+    }
+}

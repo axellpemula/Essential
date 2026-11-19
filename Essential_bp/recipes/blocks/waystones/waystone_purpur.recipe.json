@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:waystone_purpur_recipe"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [" m ", "mwm", "mmm"],
+        "key": {
+            "m": {
+                "item": "minecraft:purpur_block"
+            },
+            "w": {
+                "item": "es:warpstone"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:waystone_purpur",
+            "count": 1
+        }
+    }
+}

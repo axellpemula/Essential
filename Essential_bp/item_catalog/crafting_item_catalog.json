@@ -1,0 +1,174 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "construction",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "es:fake_stone",
+                            "name": "es:fake_stone"
+                        },
+                        "items": [
+                            "es:fake_stone",
+                            "es:fake_stone_bricks",
+                            "es:fake_grass_block",
+                            "es:fake_dirt",
+                            "es:fake_cobblestone",
+                            "es:fake_mossy_cobblestone",
+                            "es:fake_sand",
+                            "es:fake_gravel",
+                            "es:fake_clay",
+                            "es:fake_snow_block",
+                            "es:fake_quartz_block",
+                            "es:fake_quartz_bricks",
+                            "es:fake_smooth_quartz",
+                            "es:fake_quartz_pillar",
+                            "es:fake_chiseled_quartz_block"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "es:fake_oak_log",
+                            "name": "es:fake_oak_log"
+                        },
+                        "items": [
+                            "es:fake_oak_log",
+                            "es:fake_stripped_oak_log",
+                            "es:fake_spruce_log",
+                            "es:fake_stripped_spruce_log",
+                            "es:fake_birch_log",
+                            "es:fake_stripped_birch_log",
+                            "es:fake_jungle_log",
+                            "es:fake_stripped_jungle_log",
+                            "es:fake_acacia_log",
+                            "es:fake_stripped_acacia_log",
+                            "es:fake_dark_oak_log",
+                            "es:fake_stripped_dark_oak_log",
+                            "es:fake_mangrove_log",
+                            "es:fake_stripped_mangrove_log",
+                            "es:fake_cherry_log",
+                            "es:fake_stripped_cherry_log",
+                            "es:fake_pale_oak_log",
+                            "es:fake_stripped_pale_oak_log",
+                            "es:fake_crimson_log",
+                            "es:fake_stripped_crimson_stem",
+                            "es:fake_warped_stem",
+                            "es:fake_stripped_warped_stem"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "es:fake_oak_wood",
+                            "name": "es:fake_oak_wood"
+                        },
+                        "items": [
+                            "es:fake_oak_wood",
+                            "es:fake_stripped_oak_wood",
+                            "es:fake_spruce_wood",
+                            "es:fake_stripped_spruce_wood",
+                            "es:fake_birch_wood",
+                            "es:fake_stripped_birch_wood",
+                            "es:fake_jungle_wood",
+                            "es:fake_stripped_jungle_wood",
+                            "es:fake_acacia_wood",
+                            "es:fake_stripped_acacia_wood",
+                            "es:fake_dark_oak_wood",
+                            "es:fake_stripped_dark_oak_wood",
+                            "es:fake_mangrove_wood",
+                            "es:fake_stripped_mangrove_wood",
+                            "es:fake_cherry_wood",
+                            "es:fake_stripped_cherry_wood",
+                            "es:fake_pale_oak_wood",
+                            "es:fake_stripped_pale_oak_wood",
+                            "es:fake_crimson_hyphae",
+                            "es:fake_stripped_crimson_hyphae",
+                            "es:fake_warped_hyphae",
+                            "es:fake_stripped_warped_hyphae"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "es:fake_oak_planks",
+                            "name": "es:fake_oak_planks"
+                        },
+                        "items": [
+                            "es:fake_oak_planks",
+                            "es:fake_spruce_planks",
+                            "es:fake_birch_planks",
+                            "es:fake_jungle_planks",
+                            "es:fake_acacia_planks",
+                            "es:fake_dark_oak_planks",
+                            "es:fake_mangrove_planks",
+                            "es:fake_cherry_planks",
+                            "es:fake_pale_oak_planks",
+                            "es:fake_bamboo_planks",
+                            "es:fake_bamboo_mosaic",
+                            "es:fake_crimson_planks",
+                            "es:fake_warped_planks"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "es:warpstone",
+                            "name": "es:warpstone"
+                        },
+                        "items": [
+                            "es:waystone",
+                            "es:waystone_dirt",
+                            "es:waystone_blackstone",
+                            "es:waystone_oak",
+                            "es:waystone_sandstone",
+                            "es:waystone_red_nether_brick",
+                            "es:waystone_end_stone",
+                            "es:waystone_purpur",
+                            "es:waystone_mossy",
+                            "es:waystone_deepslate",
+                            "es:waystone_prismarine",
+                            "es:warpstone"
+                        ]
+                    }
+                ]
+            },
+            {
+                "category_name": "equipment",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "es:leather_helmet_with_light",
+                            "name": "es:leather_helmet_with_light"
+                        },
+                        "items": [
+                            "es:leather_helmet_with_light",
+                            "es:copper_helmet_with_light",
+                            "es:chain_helmet_with_light",
+                            "es:iron_helmet_with_light",
+                            "es:gold_helmet_with_light",
+                            "es:diamond_helmet_with_light",
+                            "es:netherite_helmet_with_light",
+                            "es:excavator_hat",
+                            "es:flashlight"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "es:wooden_aiot",
+                            "name": "es:wooden_aiot"
+                        },
+                        "items": [
+                            "es:wooden_aiot",
+                            "es:stone_aiot",
+                            "es:copper_aiot",
+                            "es:iron_aiot",
+                            "es:golden_aiot",
+                            "es:diamond_aiot",
+                            "es:netherite_aiot",
+                            "es:aiot_netherite_upgrade_smithing_template"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

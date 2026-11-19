@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "es:bound_scroll",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            }
+        },
+        "components": {
+            "minecraft:icon": "bound_scroll",
+            "minecraft:display_name": {
+                "value": "§5Bound Scroll§r"
+            },
+            "minecraft:glint": true,
+            "minecraft:max_stack_size": 1,
+            "es:bound_scroll": {},
+            "minecraft:use_animation": "brush",
+            "minecraft:use_modifiers": {
+                "use_duration": 1,
+                "movement_modifier": 0.5
+            }
+        }
+    }
+}

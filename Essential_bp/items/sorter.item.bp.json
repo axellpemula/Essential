@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "es:sorter",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:icon": "sorter",
+            "minecraft:display_name": {
+                "value": "Sorter§r\n§7Used to sort inventory/container items"
+            },
+            "minecraft:max_stack_size": 1,
+            "es:sorter": {},
+            "minecraft:cooldown": {
+                "category": "use",
+                "duration": 1,
+                "type": "use"
+            },
+            "minecraft:durability": {
+                "max_durability": 36
+            },
+            "minecraft:rarity": "rare"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:fake_birch_wood"
+        },
+        "tags": [
+            "fake_blocks"
+        ],
+        "pattern": [
+            "bg"
+        ],
+        "key": {
+            "g": {
+                "item": "minecraft:glass_pane"
+            },
+            "b": {
+                "item": "minecraft:birch_wood"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:fake_birch_wood",
+            "count": 1
+        }
+    }
+}

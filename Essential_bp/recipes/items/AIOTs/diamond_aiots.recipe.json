@@ -1,0 +1,37 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:diamond_aiot"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [" p ", "asf", "hb "],
+        "key": {
+            "p": {
+                "item": "minecraft:diamond_pickaxe"
+            },
+            "a": {
+                "item": "minecraft:diamond_axe"
+            },
+            "s": {
+                "item": "minecraft:diamond_shovel"
+            },
+            "b": {
+                "item": "minecraft:diamond_sword"
+            },
+            "h": {
+                "item": "minecraft:diamond_hoe"
+            },
+            "f": {
+                "item": "minecraft:string"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:diamond_aiot",
+            "count": 1
+        }
+    }
+}

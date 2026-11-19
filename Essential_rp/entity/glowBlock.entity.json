@@ -1,0 +1,69 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "es:glowblock",
+            "materials": {
+                "default": "entity_alphatest",
+                "outline": "outline",
+                "entity_seethrough": "entity_seethrough"
+            },
+            "textures": {
+                "default": "textures/entity/empty",
+                "outline": "textures/ui/White",
+                "outline_lime": "textures/blocks/outline/lime",
+                "outline_orange": "textures/blocks/outline/orange",
+                "outline_light_gray": "textures/blocks/outline/light_gray",
+                "outline_yellow": "textures/blocks/outline/yellow",
+                "outline_aqua": "textures/blocks/outline/aqua",
+                "outline_blue": "textures/blocks/outline/blue",
+                "outline_red": "textures/blocks/outline/red",
+                "outline_black": "textures/ui/Black",
+                "outline_brown": "textures/blocks/outline/brown",
+                "outline_test": "textures/blocks/outline/test",
+
+                // Ore
+                "ancient_debris": "textures/blocks/ore/ancient_debris",
+                "coal_ore": "textures/blocks/ore/coal_ore",
+                "deepslate_coal_ore": "textures/blocks/ore/deepslate_coal_ore",
+                "iron_ore": "textures/blocks/ore/iron_ore",
+                "deepslate_iron_ore": "textures/blocks/ore/deepslate_iron_ore",
+                "gold_ore": "textures/blocks/ore/gold_ore",
+                "deepslate_gold_ore": "textures/blocks/ore/deepslate_gold_ore",
+                "diamond_ore": "textures/blocks/ore/diamond_ore",
+                "deepslate_diamond_ore": "textures/blocks/ore/deepslate_diamond_ore",
+                "emerald_ore": "textures/blocks/ore/emerald_ore",
+                "deepslate_emerald_ore": "textures/blocks/ore/deepslate_emerald_ore",
+                "lapis_ore": "textures/blocks/ore/lapis_ore",
+                "deepslate_lapis_ore": "textures/blocks/ore/deepslate_lapis_ore",
+                "redstone_ore": "textures/blocks/ore/redstone_ore",
+                "deepslate_redstone_ore": "textures/blocks/ore/deepslate_redstone_ore",
+                "nether_quartz_ore": "textures/blocks/ore/nether_quartz_ore",
+                "copper_ore": "textures/blocks/ore/copper_ore",
+                "deepslate_copper_ore": "textures/blocks/ore/deepslate_copper_ore",
+                "nether_gold_ore": "textures/blocks/ore/nether_gold_ore"
+            },
+            "geometry": {
+                "default": "geometry.empty",
+                "outline": "geometry.outline",
+                "box": "geometry.box"
+            },
+            "scripts": {},
+            "render_controllers": [
+                {
+                    "controller.render.box": "q.property('es:glow_type') == 'box'"
+                },
+                {
+                    "controller.render.ore": "q.property('es:glow_type') == 'ore'"
+                },
+                {
+                    "controller.render.outline": "q.property('es:glow_type') == 'outline'"
+                }
+            ],
+            "spawn_egg": {
+                "base_color": "#02ffa2",
+                "overlay_color": "#fc0000"
+            }
+        }
+    }
+}

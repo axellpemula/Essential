@@ -1,0 +1,150 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "es:gravestone_block",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"],
+                    "y_rotation_offset": 180
+                }
+            },
+            "states": {
+                "es:style": {
+                    "values": {
+                        "min": 0,
+                        "max": 3
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:movable": {
+                "movement_type": "immovable",
+                "sticky": "none"
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.gravestone"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "gravestone_steve",
+                    "ambient_occlusion": false,
+                    "face_dimming": true,
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:collision_box": {
+                "origin": [-8, 0, -8],
+                "size": [16, 4, 14]
+            },
+            "es:gravestone": {},
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 4
+            },
+            "minecraft:display_name": "Gravestone",
+            "minecraft:loot": "loot_tables/air.loot.json"
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('es:style') == 0",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "gravestone_steve",
+                            "ambient_occlusion": false,
+                            "face_dimming": true,
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:style') == 1",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "gravestone_ct",
+                            "ambient_occlusion": false,
+                            "face_dimming": true,
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:style') == 2",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "gravestone_patr",
+                            "ambient_occlusion": false,
+                            "face_dimming": true,
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('es:style') == 3",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "gravestone_steve",
+                            "ambient_occlusion": false,
+                            "face_dimming": true,
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:geometry": {
+                        "identifier": "geometry.gravestone",
+                        "bone_visibility": {
+                            "head": false
+                        }
+                    }
+                }
+            },
+            // Facing north
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 0]
+                    }
+                }
+            },
+            // Facing west
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 90, 0]
+                    }
+                }
+            },
+            // Facing south
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 180, 0]
+                    }
+                }
+            },
+            // Facing east
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, -90, 0]
+                    }
+                }
+            }
+        ]
+    }
+}

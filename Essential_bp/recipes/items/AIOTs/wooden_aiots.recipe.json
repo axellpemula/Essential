@@ -1,0 +1,37 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "es:wooden_aiot"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [" p ", "asf", "hb "],
+        "key": {
+            "p": {
+                "item": "minecraft:wooden_pickaxe"
+            },
+            "a": {
+                "item": "minecraft:wooden_axe"
+            },
+            "s": {
+                "item": "minecraft:wooden_shovel"
+            },
+            "b": {
+                "item": "minecraft:wooden_sword"
+            },
+            "h": {
+                "item": "minecraft:wooden_hoe"
+            },
+            "f": {
+                "item": "minecraft:string"
+            }
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        },
+        "result": {
+            "item": "es:wooden_aiot",
+            "count": 1
+        }
+    }
+}

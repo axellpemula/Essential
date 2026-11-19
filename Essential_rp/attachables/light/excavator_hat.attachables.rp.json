@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "es:excavator_hat",
+            "materials": {
+                "default": "entity_glow",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/items/models/excavator_model",
+                "enchanted": "textures/misc/enchanted_actor_glint"
+            },
+            "geometry": {
+                "default": "geometry.excavator_hat"
+            },
+            "scripts": {
+                "parent_setup": "variable.helmet_layer_visible = 0.0;",
+                "animate": ["offset"]
+            },
+            "animations": {
+                "offset": "animation.armor.helmet.offset"
+            },
+            "render_controllers": ["controller.render.armor"]
+        }
+    }
+}

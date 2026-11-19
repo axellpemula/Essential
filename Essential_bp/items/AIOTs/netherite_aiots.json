@@ -1,0 +1,74 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "es:netherite_aiot",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": "netherite_aiot",
+            "minecraft:display_name": {
+                "value": "Netherite AIOT"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 8128
+            },
+            "minecraft:damage": {
+                "value": 10
+            },
+            "minecraft:enchantable": {
+                "value": 15,
+                "slot": "pickaxe"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "repair_amount": "context.other->q.remaining_durability + 0.05 * context.other->q.max_durability",
+                        "items": [
+                            "es:netherite_aiot"
+                        ]
+                    },
+                    {
+                        "repair_amount": "8128 * 0.38",
+                        "items": [
+                            "minecraft:netherite_ingot"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "block": {
+                            "tags": "q.any_tag('wood', 'pumpkin', 'plant', 'dirt', 'sand', 'gravel', 'grass', 'snow', 'stone', 'metal')"
+                        },
+                        "speed": 10
+                    },
+                    {
+                        "block": {
+                            "tags": "q.any_tag('minecraft:is_pickaxe_item_destructible', 'minecraft:is_axe_item_destructible', 'minecraft:is_hoe_item_destructible', 'minecraft:is_shovel_item_destructible', 'minecraft:netherite_tier_destructible')"
+                        },
+                        "speed": 10
+                    }
+                ]
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_tool",
+                    "minecraft:digger",
+                    "minecraft:netherite_tier",
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_sword",
+                    "minecraft:is_axe",
+                    "minecraft:is_shovel",
+                    "minecraft:is_hoe"
+                ]
+            }
+        }
+    }
+}
