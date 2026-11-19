@@ -9,7 +9,6 @@ import {
     PlayerBreakBlockAfterEvent,
 } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
-import { ACTION_FORM_TAG, MODAL_FORM_TAG } from "./uiTags.js";
 import { changelog } from "./changelog.js";
 
 let latestVersion = changelog[0]?.version;
@@ -259,7 +258,7 @@ class ModuleManager {
             world.setDynamicProperty("owner", player.id);
         }
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}Essential++`);
+        form.title("Essential++");
         form.body(`Select a module to configure.` + `\n§7Current TPS: §a${this.currentTps.toFixed(2)}` + `\n§7Modules: §a${moduleArray.length}`);
 
         for (const module of moduleArray) {
@@ -284,7 +283,7 @@ class ModuleManager {
         let owner = world.getDynamicProperty("owner");
         let hasPermission = player.id === owner || player.hasTag("essential++:config_access");
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}Essential++ Add-On §8[${latestVersion}]`);
+        form.title(`Essential++ Add-On §8[${latestVersion}]`);
         form.body("Welcome to the Essential++ configuration menu!\n" + `§7Current TPS: §a${this.currentTps.toFixed(2)}\n` + "§cNo access? /tag <yourname> add essential++:config_access");
 
         const actions = [];
@@ -344,7 +343,7 @@ class ModuleManager {
      */
     async showSettingsMenu(player) {
         const form = new ModalFormData();
-        form.title(`${MODAL_FORM_TAG}Essential++ Settings`);
+        form.title("Essential++ Settings");
 
         let giveMenu = world.getDynamicProperty("essential++:give_menu_on_join");
         if (giveMenu === undefined) giveMenu = true;
@@ -370,7 +369,7 @@ class ModuleManager {
         let players = Array.from(world.getAllPlayers()).filter((p) => p.id !== player.id);
         const form = new ModalFormData();
         if (players.length === 0) {
-            form.title(`${MODAL_FORM_TAG}Grant Permission`);
+            form.title("Grant Permission");
             form.label(`§cNo other players available to grant permission to.`);
             form.submitButton("Back");
             form.show(player).then((re) => {
@@ -379,7 +378,7 @@ class ModuleManager {
             });
             return;
         }
-        form.title(`${MODAL_FORM_TAG}Grant Permission`);
+        form.title("Grant Permission");
         form.label(`Allow other player to access Essential++ configuration menu`);
         form.dropdown(
             "Select a player to grant permission to:",
@@ -404,7 +403,7 @@ class ModuleManager {
         let players = Array.from(world.getAllPlayers()).filter((p) => p.hasTag("essential++:config_access"));
         const form = new ModalFormData();
         if (players.length === 0) {
-            form.title(`${MODAL_FORM_TAG}Revoke Permission`);
+            form.title("Revoke Permission");
             form.label(`§cNo other players available to revoke permission from.`);
             form.submitButton("Back");
             form.show(player).then((re) => {
@@ -413,7 +412,7 @@ class ModuleManager {
             });
             return;
         }
-        form.title(`${MODAL_FORM_TAG}Revoke Permission`);
+        form.title("Revoke Permission");
         form.label(`Revoke permission from a player`);
         form.dropdown(
             "Select a player to revoke permission from:",
@@ -437,7 +436,7 @@ class ModuleManager {
      */
     async showChangelog(player) {
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}Changelog`);
+        form.title("Changelog");
         const br = "§8═════════════════════§r";
         // Show every changelog
         const lines = [];
@@ -497,7 +496,7 @@ class ModuleManager {
      */
     async showCredits(player) {
         const form = new ActionFormData();
-        form.title(`${ACTION_FORM_TAG}Credits`);
+        form.title("Credits");
         const lines = ["§aEssential++ Add-On", "§7Developed by: §bxVoid_Axell", "§9Discord: §baxell_08", "§7Contributors: §fCommunity members", "§7Thanks for using Essential++!"];
         const br = "§8═════════════════════§r";
         form.body([br, ...lines, br].join("\n"));
@@ -514,7 +513,7 @@ class ModuleManager {
      */
     async showModuleConfigMenu(player, module) {
         const form = new ModalFormData();
-        form.title(`${MODAL_FORM_TAG}${module.name}`);
+        form.title(module.name);
         form.label(module.description);
         form.toggle("Enable Module", {
             defaultValue: module.isEnabled,
